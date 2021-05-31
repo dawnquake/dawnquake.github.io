@@ -2,12 +2,41 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <head>
-        <link rel="icon" type="image/png" href="./favicon.png"/>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
         <title> Welcome! </title>
-        <link rel = "stylesheet" href = "./styles.css">
+        <link rel = "stylesheet" href = "/styles.css">
 
     </head>	
     <body>
+
+        <script src="/index.js">  </script>  
+        <div class="topnav" id="myTopnav">
+
+
+            <a href="/index.html" class="active">About Me</a>
+            <a href="/CV/CV.html">CV</a>
+
+
+            <div class="dropdown">
+              <button class="dropbtn"> Software Projects
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="/Cxx_projects/Cxx_projects.html">C++ projects</a>
+                <a href="/Python_projects/Python_projects.html">Python</a>
+                <a href="Fortran_projects/Fortran_projects.html">Fortran</a>
+              </div>
+            </div>
+
+            <a href="/PC_build/PC_build.html"> PC Build </a>
+            <a href="/Contact/Contact.html">Contact</a>
+            
+
+            <!-- This is for the respnsive design to collapse-->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+        </div> 
+
+
         <p> Hi! Welcome to my website! I am Zhendan Shang </p>
 
         <p> <a href = "./CV/CV.html"> Click here for my CV and Resume </a></p>
@@ -20,7 +49,7 @@
         <br>
         <a href = "./Python_projects/Python_projects.html"> Click Here for Python projects </a>
         <br>
-        <a href = "./Cxx_projects/C++_projects.html"> Click Here for C++ projects </a>
+        <a href = "./Cxx_projects/Cxx_projects.html"> Click Here for C++ projects </a>
         <br>
         <a href = "./Fortran_projects/Fortran_projects.html"> Click Here for Fortran projects </a>
         </p>
