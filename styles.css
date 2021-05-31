@@ -1,6 +1,8 @@
- /*Top Down Responsive Navigation Bar */
-    
-    /* Add a black background color to the top navigation */
+body {color: black; background-color:white;}
+a {color: white; text-decoration: none; /* no underline */}
+ 
+/*Top Down Responsive Navigation Bar */
+/* Add a black background color to the top navigation */
     .topnav {
         background-color: #333;
         overflow: hidden;
@@ -19,7 +21,7 @@
     
     /* Add an active class to highlight the current page */
     .active {
-        background-color: #04AA6D;
+        background-color: #333;
         color: white;
     }
     
@@ -68,7 +70,7 @@
     
     /* Add a dark background on topnav links and the dropdown button on hover */
     .topnav a:hover, .dropdown:hover .dropbtn {
-        background-color: #555;
+        background-color:red;
         color: white;
     }
     
@@ -117,3 +119,29 @@
     } 
 
 
+/* Begin the CSS for the two column layout */
+* {box-sizing: border-box;}
+img{height: 100%; width: 100%; object-fit: contain; }
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+  }
+  
+  .flex-item-left {
+    flex: 25%;
+    padding: 0 4px
+  }
+  
+  .flex-item-right {
+    flex: 75%;
+    padding: 0 4px
+  }
+  
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+    .flex-item-right, .flex-item-left {
+      flex: 100%;
+    }
+  }
