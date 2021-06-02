@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+
+
     <head>
         <link rel="icon" type="image/png" href="/favicon.png"/>
         <title> Welcome! </title>
@@ -9,10 +12,43 @@
     </head>	
     <body>
 
+
+
+
       <!-- Navigation Bar Javascript -->
       <script src="/index.js"> top_nav_toggle(); </script>  
-      <script type="text/javascript">write_navbar();</script>
+
+      <script src="/index.js">  </script>  
+      <div class="topnav" id="myTopnav">
+
+
+          <a href="/index.html" class="active">About Me</a>
+          <a href="/CV/CV.html">CV</a>
+
+
+          <div class="dropdown">
+            <button class="dropbtn"> Software Projects
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="/Cxx_projects/Cxx_projects.html">C++ projects</a>
+              <a href="/Python_projects/Python_projects.html">Python</a>
+              <a href="/Fortran_projects/Fortran_projects.html">Fortran</a>
+            </div>
+          </div>
+
+          <a href="/PC_build/PC_build.html"> PC Build </a>
+          <a href="/Contact/Contact.html">Contact</a>
+          
+
+          <!-- This is for the respnsive design to collapse-->
+          <a href="javascript:void(0);" class="icon" onclick="top_nav_toggle()">&#9776;</a>
+      </div> 
       <!-- Finished the top navigation bar-->
+
+
+
+
 
       <!-- Beginning responsive 2 column grid view-->
 
@@ -29,9 +65,9 @@
 
             <p>Hi! Welcome to my website! I am Zhendan Shang</p>
 
-            <p>I am a Geophysicist (2:1 BSc Geophysics from Imperial) currently completing a Masters in Applied Computational Science and Engineering. </p>
+            <p>I built this website using HTML, CSS and Javascript (sadly Github Pages does not let me use Angular or php) to showcase my various projects and interests. </p>
 
-            <p>I built this website using HTML, CSS and Javascript (sadly Github pages does not let me use Angular or php) to showcase my various projects and interests. </p>
+            <p>I am a Geophysicist (2:1 BSc Geophysics from Imperial) currently completing a Masters in Applied Computational Science and Engineering. </p>
 
         </div>
 
@@ -42,7 +78,7 @@
 
 
 
-      <p>I write code to solve scientific problems using numerical simulations. I use Python (numpy, matplotlib, PyTorch etc.) for visualizations and machine learning, C++ (OpenMP, MPI etc.) for Parallelization and memory managements and Fortran with BLAS and LAPACK for complicated matrix algebra. 
+      <p>I write code to solve scientific problems using numerical simulations. I use Python (numpy, matplotlib, PyTorch etc.) for visualizations and machine learning, C++ (OpenMP, MPI etc.) for parallelization and memory managements and Fortran with BLAS and LAPACK for complicated matrix algebra. 
 
       <p>While I am proficient in using pillow, matplotlib and gnuplot for visualization, I can also "prettify" these images using GIMP, Inkscape and Photoshop for final presentation. </p>
 
