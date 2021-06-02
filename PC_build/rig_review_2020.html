@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <head>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <title> Rig Review 2020 </title>
+        <link rel = "stylesheet" href = "/styles.css">
+    </head>	
+    <body>
+        <!-- Navigation Bar Javascript -->
+        <script src="/index.js"> top_nav_toggle(); </script>  
+        <script type="text/javascript">write_navbar();</script>
+
+    
+    <div>
+        <h3>Rig Review 2020</h3>
+        <em><small>Published: 2021 June 3rd</small></em>
+        <hr>
+
+        <p>
+        Specs before review on the rig
+        <br>
+        CPU:    Ryzen 3950x
+        <br>
+        MOBO:   MSI X570 Tomahawk WiFi
+        <br>
+        RAM:    2x32 GB DDR4
+        <br>
+        GPU:    GT610 (new ones are still too pricey!)
+        <br>
+        SSD:    WD 2GB M.2
+        <br>
+        Cooler: Noctua NH-U12S
+        <br>
+        Case:   Corsair 275R Airflow
+        </p>
+        
+        <p>CPU: I chose the Ryzen 3950x because it has lots of cores and a good base clock frequency. I knew from the ACSE course description that I needed to do parallel programming with OpenMP and MPI, and Ryen 3950x had 16 cores so it would work great with OpenMP and MPI. I also knew that I might be working with software that were not optimized for multi core performance and the effort of parallelizing such software might be too costly, so I needed a good base clock frequency, and not just a large number of cores. The alternatives for me would either be the Ryzen 3900x or to go for a Threadripper processor. I am not actually trying to build a proper HPC here, so I skipped over the EPYC processors like the ones used in the ARCHER2 or the Intel's Knight's Landing CPUs. These CPUs also usually have lower per core frequency, so they would not work very well for non parallelized workloads. I also had a limited budget so super expensive chips were out of the question, so the Ryzen 3950x was the overall best choice for my budget, my need for lots of cores for parallelization and my need for some good single core performance for unoptimized programs. </p>
+        
+        <p><em>1 year into running this, I am generally satisfied with the performance. In hindsight, I could probably have waited a bit more to get the 5950x instead. </em></p>
+        
+        <p>MOBO: Since my CPU was the Ryzen 3950x, this meant that I needed a MOBO with the compatible AM4 socket. I also wanted the newest PCI 4.0 since I was hopeful that I would be getting a graphics card, and I wanted the MOBO to have inbuilt WiFi so that I could save the hassle of a network card. I also needed an ATX board so that I can have 4 slots for RAM so that I can properly load the massive datasets that I am working on into memory. </p>
+        
+        <p><em>1 year into running this, the MOBO is working alright. In hindsight, MSI only had Windows drivers and not Linux drivers, so I could not control the fans when dual booting into Ubuntu. Another problem is the signal strength of the onboard WiFi. Since my sister requisitioned my room, the onboard WiFi is not very capable of pentrating two concrete walls so I sometimes lose WiFi signal. Hopefully there is nothing wrong with the PCIe 4.0 when I finally get my hands on a graphics card. </em></p>
+        
+        <p>GPU: The GT610 I dug up from the storage in the house was supposed to be a temporary solution, but due to the lack of properly priced GPUs, it ended up sticking with me. This card is a decade old, so I have no expectations whatsoever of its performance and I am satisfied if my computer lights up. Ryzen 3950x does not come with integrated graphics and needs a GPU to light up the screen. </p>
+        
+        <p><em> 1 year into running this, Well, there cannot be disappointment if there are no expectations. Does the job of lighting up my screen perfectly. However, discovered that the card is so old that ML software like PyTorch and Tensorflow will simply tell you no GPU found and instead use the CPU when you ask for GPU acceleration. Also, does not support Parsec. </em></p>
+        
+        <p> SSD: I wanted an SSD at a good price from a reputable brand for the M.2 slot on the MOBO and I also wanted it to have lots of storage to save up the large datasets I might be working with. I wanted the M.2 slot since I wanted to keep as much as possible on the MOBO to avoid managing and organizing cables. </p>
+
+        <p><em>1 year into running this, the SSD is working alright. Half of it was given to Windows and half of it was given to Ubuntu. </em></p>
+        
+        <p> Cooler: I wanted a cooler from the reputable brand and with decent cooling performance. I considered the idea of passive cooling, but I did not think that passive cooling will be enough if I push the 16 cores of Ryzen 3950x all to 4.2 GHz. I also considered water cooling, but the risk of leakage which can destroy everything in the computer is not acceptable; especially when working with expensive datasets. I also wanted it to be quiet so that I can sleep while letting the simulations run overnight. Watched some youtube videos, checked my local availability, and checked which cooler had video instructions on youtube about how to mount the cooler on the MOBO, and thus went for the Noctua U12S. </p>
+        
+        <p><em>1 year into running this, I can say that I am really happy with the cooler. It is generally quiet when doing everyday tasks, and can keep the 16 core Ryzen 3950x cooled even with full load at 4.2GHz. However, running full load makes the fans spin really fast, so it is not exactly quiet enough to let it run overnight and allow me to sleep. Plugging the fans out to stop the noise will prevent sufficient cooling at full load, so I guess can't have quiet and full load at the same time. </em></p>
+        
+        <p>Case: Corsair 275R Airflow is a good case. You could in fact run your computer on a cardboard case, but having a proper case saves a lot of hassle. I only needed a good case at a good price, big enough to fit a large GPU and an ATX MOBO. I also wanted a glass side panel because it looked good on youtube. </p>
+        
+        <p><em> 1 year into running this: Case is really good. I really like how they have removable flaps on top that you can just easily take out without opening the case. I think that tempered glass is very nice, not for looking at the components of the computer and mesmerizing over it, but for getting a good idea how dusty the computer is. I have had cases with no glass whatsoever, and each time opening the computer case is like opening a bad full of nasty surprises, with possible insect or mammalian remains. The only problem with the case is that it has only 2 USB ports in front, and I could definitely use more USB ports in front. </em></p>
+
+    </div>
+    
+
+
+   </body>	
+
+
+</html>

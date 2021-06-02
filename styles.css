@@ -1,5 +1,11 @@
 body {color: black; background-color:white;}
-a {color: white; text-decoration: none; /* no underline */}
+a {color: blue; text-decoration: none; /* no underline */}
+h5{margin:0; padding:0;}
+h4{margin:0; padding:0;}
+/* Begin the CSS for the two column layout */
+* {box-sizing: border-box;}
+img{height: 100%; width: 100%; object-fit: contain; }
+
  
 /*Top Down Responsive Navigation Bar */
 /* Add a black background color to the top navigation */
@@ -119,9 +125,7 @@ a {color: white; text-decoration: none; /* no underline */}
     } 
 
 
-/* Begin the CSS for the two column layout */
-* {box-sizing: border-box;}
-img{height: 100%; width: 100%; object-fit: contain; }
+
 
 .flex-container {
     display: flex;

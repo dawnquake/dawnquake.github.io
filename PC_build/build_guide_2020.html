@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <head>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <title> Build Guide 2020 </title>
+        <link rel = "stylesheet" href = "/styles.css">
+    </head>	
+    <body>
+        <!-- Navigation Bar Javascript -->
+        <script src="/index.js"> top_nav_toggle(); </script>  
+        <script type="text/javascript">write_navbar();</script>
+
+    
+    <div>
+        <h3>Rig Review 2020</h3>
+        <em><small>Published: 2021 June 3rd</small></em>
+        <hr>
+
+        <p>I built my computer in several steps.
+        
+        <hr>
+        <h5> Step 0: Prebuilt Checkup </h5>
+
+        You should have already checked the compatibility between components before you bought them, and also checked that they will all fit together comfortably within the computer case. You can use PCPartPicker to pick your components out. Although I must say that PCPartPicker does not have a full complete list of possible components since you might find various components not made by the top brands in the electronics stores not listed in PCPartPicker. However, you must be careful about these so that you don&apos;t get scammed. If you cannot distinguish by the looks if the product is good or not, then picking out the components from PCPartPicker is a good starting point. Make a list of the features you want, or make a list of features you don&apos;t want and filter the components then check your local availability and price to further narrow down the list. &nbsp;
+        
+        <br><br>First and foremost, before doing anything, always, always double check that you have the right components and double read the user manual that comes with the component. I read each instruction manual many times before starting my build.
+        
+        <br><br>I have designed my build so that the only wires within the case are going to wires from the front panel and the wires from the PSU. My SSD is mounted on the MOBO and I have no need for optical drives, thus saving some hassle with cable management.
+        
+        <hr>
+        <h5> Step 1: Installing the CPU and the Cooler </h5>
+
+        First you would unpack your motherboard, and place it on the cardboard box that comes with the motherboard. Now, this step is crucial. Carefully read your motherboard manual and CPU manual and very carefully mount the CPU on the motherboard. DO NOT try to apply any kind of force that might bend the pins of either the MOBO or the CPU. A CPU with bent pins is very much just a silicate rock.
+        
+        <br><br>Then after succesfully mounting the CPU, apply the thermal paste. A thermal paste should come with the cooler, which should suffice for everyday use. You might want to use higher grade thermal paste, but remember that some of these might be poisonous. There is no best way to put thermal paste, but you should try to keep the thermal paste on the CPU chip and not spill over to the MOBO. Reputable thermal paste should be non conductive, so it's fine if you've spilled a tiny bit, but definitely don't intentionally apply thermal paste on the MOBO. 
+        
+        <br><br>Carefully read the instruction manual for the cooler. A good thing about Noctua cooler is that they typically come with both Intel and AMD mount. Then follow the manual and mount the cooler. I cannot really help here since each cooler mounts differently, but for reputable cooler brands, you should be able to find instruction videos on youtube about how to mount the cooler. Remember to plug the fans of the cooler into the fan slot, which should be somewhere close to the CPU.
+        
+        <hr>
+        <h5> Step 2: Mounting the RAM </h5>
+
+        Following the cooler, mount the RAM. The amount of RAM you can have depends on the MOBO and the CPU, and the optimum configuration for RAM also depends on the MOBO and CPU. Ryzen 3950x supports a maximum of 128GB of RAM. If you need more RAM, you will have to look at the Threadripper, EPYC or the Intel server CPUs, which do not have the same MOBO beteween each other or with the Ryzen series. If your CPU supports x GB of RAM, then choose a MOBO that also supports x GB of RAM.
+        
+        <br><br>Your CPU will also come with either Dual Channel or Quad Channel modes. For Dual Channel CPU, for the same amount of RAM, a 2xhalf of RAM configuration is better than a 4xquarter of RAM configuration, while for a Quad Channel CPU, for the same amount of RAM, a 4xquarter is better than 2xhalf. Of course, your MOBO might come with 4 slots, while only being Dual Channel. Being dual channel does not prevent you from sticking 4 sticks of RAM, one into each slot. For my setup, my CPU and MOBO are dual channel, so I went with 2x32 GB of RAM, and leave the upgrade options to upgrade to 4x32GB of RAM if I need in the future. To use the Dual Channel, you must stick the RAM into either slot 1 and 3 , or slot 2 and slot 4. You will not reap the benefits of dual channel if you stick the RAM in slot 1 and 2 or slot 3 and 4, even if the computer starts and works properly. The current consumer lineup for both Intel and AMD only supports dual channel, and it is only the Threadripper, EPYC and Intel server that supports quad channel.
+        
+        <br><br>If this sounds confusing, you can think of each slot of memory as a depo and each chhannel as a highway lane to the CPU cache. Dual Channel means that there are two highway lanes. Can you have 2 depos and 2 highway lanes? Of course! Can you have 4 depos and 2 highways lane? It&apos;s a bit busy but it&apos;s still okay! But the problem is that depo1 and depo2 are connected to lane1 while depo3 and depo4 are connected to lane2. Thus, you install RAM in slot1,3 or slot2,4 to make sure that each lane is as efficient as possible. Now, it is probably intuitive to understand that more lanes will be better for reducing congestion and sending the packets of data faster. &nbsp;
+        
+        <br><br>There exists also ECC memory, but unless your specific usecase dictates that you must use ECC memory you generally do not need it. For ECC memory, you also need a much more expensive MOBO that allows you to use the ECC capability of ECC memory. Be wary that while many MOBO say that they support ECC memory, they mean that you can use ECC memory like normal memory, and not that you can neccesarily use the ECC capability of the ECC memory. You need to specifically look for MOBO that specifically say that they allow the ECC capability of ECC memory and not just that they support ECC memory.
+        
+        <br><br>Memory also comes with frequency. While memory frequency could give a small boost to performance, especially for the 1st gen Ryzen processors, you do not actually need that high of a frequency since higher frequency RAM just bring small performance boosts. Their extra cost do not really justify their performance boost that well. If there is only a small price difference, then always go for the higher frequency, but I would rank frequency as the least important aspect of RAM. You should also check that your MOBO supports this higher frequency, and MOBO that support higher frequency are also typically more expensive. Generally, a frequency of around 3000 MHz should be good enough for most use cases. Think of frequency as how fast the drivers can drive on the lanes. Also, you will need to modify the BIOS and change the RAM setting to X-AMP to actually benefit from the higher frequency; otherwise you are stuck with the default 2133MHz. Warning: This might void your MOBO warranty though!
+        
+        <br><br>I would generally advice against combining and matching different sticks of RAM together and I would buy the RAM stick in pairs, i.e. 2x32, 4x16 etc. This is because putting different RAM together can result in terrible blue screen of death and this is super frustrating when you are like 8 hours into a 10 hour simulation. These types of bugs are also super hard to debug, since they only usually happen when the RAM is under heavy load, and they have nothing to do with the software. So you might be left scratching your head (I am becoming increasingly bald sadly) trying to debug the software against this bug that might not be reproducible and just occasionally comes to mess your day up. This is because RAM sticks kinda have to be in sync together. Think back about our allegory to depo and lanes. What happens if one depo has a different timing and set of instructions that the other depo? Well, while it might be fine when the traffic is light on the lanes, but it can become a huge problem when the traffic is high and easily lead to traffic accidents. When manufacturers make RAM, they should always have tested them rigourously against their own RAM and also the RAM of reputable competitors, but they cannot have tested them against each and every possible RAM produced. Thus, while you can be quite sure that RAM sticks bought together as a pair will work well with each other, you should really avoid sticking two completely different RAM sticks together. The more different the sticks, the more likely the occasional blue screen of death.
+        
+        <br><br>You should have also ensured that your RAM does not interfere with the cooler. Certain really large coolers and very tall RAM will prevent each other. For the RAM, gently move the lock into open position and then put the RAM in; the lock should snap into place. For RAM, do it carefully, since you only have as many chances as your slot. Carefully inspect the slot and the RAM to ensure you are mounting the RAM in the right direction.
+        
+        <hr>
+        <h5>Step 3: Mounting the M.2 and GPU</h5>
+        
+        Then mount the grahics card if you have one, following the instructions in the graphics card user manual. Note that if you have a really old GPU, you might have to mount it in the PCI3.0 instead of the PCI4.0. For the PCI, gently move the lock into open position then put the graphics card in and the lock should snap into place. PCI is really fragile so do not try anything forceful with it. Your whole MOBO might only have a single PCI slot, so be gentle! There should be no way you can mount the GPU wrong even if you don&apos;t inspect the slot, since the display ports of the GPU should face outwards!
+        
+        <br><br>After mounting the GPU, mount the SSD in the M.2 slot. Since I have another M.2 slot, and a bunch of SATA slots, I could expand the storage if need be. Thus, the MOBO mountain should be complete.
+        
+        <hr>
+        <h5>Step 4: Installing the PSU</h5>
+
+        Then mount the PSU, route the PSU wires if you&apos;ve got a nice case instead of cardboard, and use the attached ziplocks to help with your cable management. Never cheap out on a PSU, but you don&apos;t have to go for a Platinum certificate, usually Silver or Gold is good enough. Make sure that the PSU has enough wattage to COMFORTABLY support everything that you have. Your main power draw should be the CPU and GPU, and your PSU should able to supply 20% to 30% more power (a.k.a. juice) than what is needed for the CPU or GPU, and far more if you want to ever try using a more powerful CPU or GPU in the future, or if you are ever thinking of overclocking the CPU. You should try to buy the PSU from a reputable brand and read some reviews from reputable reviewers before buying. If you have a keen sense of smell, you should smell your PSU before using it, and while it will not smell like properly oiled gears, it should smell like humbly polished metal and definitely NOT smell BURNT. Return it immediately if it has any faint sense of BURNT smell.
+        
+        <br><br>Your PSU can either be modular, semi modular or non modular. A modular PSU is the most expensive, and a non modular PSU is the cheapest. In modular PSU, the main body of PSU and the cables connecting the PSU to anywhere that needs power are completely separate, allowing you to only use the cables you need and results in the best cable management. Modular PSU also usually comes with lots of cables, way more than you will need for a normal build. Moreover, you get to decide the length of the cable. For some very small cases, the cable might not too long while for some very large cases, the cables might be too short. A non modular PSU, the main boday of the PSU and the cables connecting the PSU to anywhere that needs power are inseparable, so you will most likely have unused cables dangling around. A semimodular is somewhere in between with the most important cables such as the Mains 20+4, the CPU and the GPU cables fixed, while the rest of the cables are modular. 
+        
+        <br><br>If you need the best cable management, or your cables needs to be of a specific length for whatever reason, then go for modular PSU. Typically, PSU cable lengths depends on what case size the PSU is built for. Big case PSU typically have longer cables, while small case PSU have shorter cables. If you want to save on budget, and know exactly which cables you will need for the entire lifespan of the PC, and don't care if the cable management is more on the uglier side, then go for the complete non modular PSU.  
+        
+        <br><br>Your PSU can also have a fan or not have a fan. Generally, you should not worry about the PSU fan, since it&apos;s generally quiet if it&apos;s from a reputable brand, compared to CPU or GPU fans, unless you wish for your computer to have absolutely no moving parts.
+        
+        <br><br>For now, carefully insert the MOBO and the PSU into the case, and install the case fans (if there are any) in the proper direction so that the one pair move the air in, and another pair elsewhere move the air out. Securely screw the MOBO and the PSU to the case. Carefully inspect the PSU cables to make sure that you are plugging the cables in correctly, i.e. there is a design in the cables to prevent you from spinning the cables 180 degrees
+        
+        <br><br>Now, depending on what you have
+        
+        <br><br>Mains 20+4, the biggest cable in the PSU, there should be only a single slot in the PSU where this fits (if modular) and only a single slot in the MOBO. Some MOBO use 20, so only mount the 20. Some MOBO require more power and use 24, so mount the 20+4.
+        
+        <br><br>PCIe 6 + 2, used to connect to the GPU usually, or whatever is in the PCI slot that needs power. Usually 6 pin is enough, but the highest end GPU might require 8 pin x 2 to deliver sufficient power.
+        
+        <br><br>CPU 4 + 4, again low end 4 is enough, high end CPU like Ryzen 3950x will NEED 8 pins.
+        
+        <br><br>SATA power cable, if you are using the SATA connectors on the motherboard with SATA drives. M.2 do not need power since they are fed straight from MOBO.
+        
+        <br><br>MOLEX cable, very old, would probably not encounter if build very new computer
+        
+        <hr>
+        <h5>Step 5: Case Fans and Front Panel</h5>
+        
+        Afterwards, you would need to mount the power cable of the fans. Note that case fans do not generally connect to the PSU, and they usually connect to the MOBO. The user manual of the MOBO should have a page to show where the fans are to be plugged in.
+        
+        <br><br>Then the front panel stuff, so these are the cables you should see dangling from the front panel of the computer. Typically they include a bunch of single pin cables (front panel connector) and a USB cable and they are usually plugged into the Lower Right corner of the MOBO. Careful that the USB cable, just like many others before, does not allow for 180 degree spin and forcefully pushing it in will bend one of the pins, thus losing you a USB port. Consult the motherboard manual on how to mount the front panel connectors. These control the power switch from outside the computer to the MOBO, thus allowing you to send the command to switch the computer on from a button on the outside of the case. Thus, without the front panel connectors connected properly, when you press the start button, the computer will not start.
+        
+        <br><br>While you can jump start a computer just like how you jump start a car, by using something metallic to connect the MOBO pins for the power switch. However, make sure you are properly insulated from the metal you use to jumpstart the PC. This can help diagnose if the computer not starting if because of some fault with the front panel connector, and whether you might need to spray WD-40 on the power switch (Remember to wipe it off afterwards and place the PC in a well ventilated place to remove the smell)</p>
+
+    </div>
+    
+
+
+   </body>	
+
+
+</html>
