@@ -25,9 +25,10 @@ function write_navbar(){
     document.write("              <i class=\"fa fa-caret-down\"><\/i>");
     document.write("            <\/button>");
     document.write("            <div class=\"dropdown-content\">");
-    document.write("              <a href=\"\/Cxx_projects\/Cxx_projects.html\">C++ projects<\/a>");
+    document.write("              <a href=\"\/Cxx_projects\/Cxx_projects.html\">C++ <\/a>");
     document.write("              <a href=\"\/Python_projects\/Python_projects.html\">Python<\/a>");
     document.write("              <a href=\"\/Fortran_projects\/Fortran_projects.html\">Fortran<\/a>");
+    document.write("              <a href=\"\/Snippets\/Snippets.html\">Snippets<\/a>");
     document.write("            <\/div>");
     document.write("          <\/div>");
     document.write("          ");

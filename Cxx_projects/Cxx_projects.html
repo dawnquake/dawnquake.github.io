@@ -1,15 +1,40 @@
 <!DOCTYPE html>
+
+<script>var title = "C++ Projects"</script>
+
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <head>
         <link rel="icon" type="image/png" href="/favicon.png"/>
-        <title> C++ Projects </title>
+        <!-- Dynamic Javascript title-->
+        <script>document.write("<title>" + title + "</title>")</script>
         <link rel = "stylesheet" href = "/styles.css">
     </head>	
     <body>
         <!-- Navigation Bar Javascript -->
         <script src="/index.js"> top_nav_toggle(); </script>  
         <script type="text/javascript">write_navbar();</script>
-        <p> Here are my various C++ projects </p>
+        
+        <div class = "flex-container" style="cursor: pointer;" onclick="window.location='Cxx_guide.html';">
+    
+            <div class = "flex-item-left">
+    
+                <div class = 'left-image'>
+                    <img src="/imgs/placeholder.png">
+                </div>
+    
+            </div>
+            <div class = "flex-item-right">
+    
+                <h5>C++ Guide I wrote during my Msc</h5>
+                <small><em> Published: 2021 June 6th </em></small>
+                <br>
+                <hr>
+                <em> A C++ guide about what I have learnt in C++ in the past year.   </em>
+    
+            </div>
+    
+        </div>
+
    </body>	
 </html>
