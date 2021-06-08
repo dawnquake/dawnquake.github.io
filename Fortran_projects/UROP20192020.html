@@ -20,156 +20,155 @@
         
         <p>Part 0: What is the project about?
             
-        <br><br>
-        
-        So if there is one thing I learnt during my 3 years of Geophysics at Imperial, it is that the Earth&apos;s mantle is SOLID. I know how you might think that since the lava coming out from a volcano is liquid, then the source of this lava must be solid. I have had my fair share of strange children&apos;s books that propagated this idea. However, it has been known for at least a century that the Earth&apos;s mantle is SOLID. Let me explain beforehand a bit about the structure of the Earth.
-        
-        <br><br>
-        
-        A basic understanding of Earth will tell you that Earth consists of several layers. We have the very thin crust, the very thick mantle, the outer core of the Earth and the inner core of the Earth. Books will try to tell you about the exact measurements of these parts of the Earth, but you should not think of these as actual exact measurements, but only as reference measurements. This is because the Earth&apos;s layer&apos;s thicknesses are non homogenous. For example, in locations like the Himalayas, the Alps, or the Andes, the crust is much thicker compared to the crust in the middle of the Atlantic Ocean, the Pacific Ocean or the Indian Ocean. The mantle is likewise non homogenous, and we know that the core mantle boundary, that is the boundary between the core and the mantle, a.k.a. the CMB is not just a nice smooth curve, but it has its highs and lows.
-        
-        <br><br>
-        
-        Investigating the internal structure of Earth has always been a great topic for research. We definitely cannot dig into the Earth to study its interior. The deepest hole we have dug is about 12 to 13 km deep. We have never been able to pierce even the Earth&apos;s crust. Thus, how do we know what is the structure of Earth? Well, we use seismic waves, specifically the body waves P and S waves.
-        
-        <br><br>
-        
-        The full details are complicated, and involve a lot of tensor mathematics that would require a whole book for the job, but in simpler words, we know that P and S waves behave differently when there are solids or liquids. P waves becomes very slow, and S waves disappear completely when passing through liquids. Thus, by studying the P and S waves from large earthquakes which will send these waves deep into the Earth&apos;s interior, we found that the crust is solid, the mantle is solid, the outer core is LIQUID and the inner core is SOLID. &nbsp;
-        
-        <br><br>
-        
-        On a sidenote, one of the first instruments used in space probes are also seismometers, which are instruments recording the vibrations in the ground, so the body waves and the surface waves. Exactly how to read a seismogram in an extraterrestrial setting is a topic too long to discuss, but we know that similar to how studying the P and S waves on Earth using seismometers can reveal information about the Earth&apos;s interior, so can studying the P and S waves on Mars or the Moon also reveal information about the interior of these bodies. These studies show that Earth is indeed a very special planet in its internal structure, and the unique characteristics of Earth might have helped it foster such a diverse biosphere.
-        
-        <br><br>
-        
-        However, since the Earth&apos;s mantle and crust are solid, how come the lava coming out of the volcanoes are liquid? Well, it comes down to pressure. When material comes up to the surface, the pressure decreases a lot, and allows melting to happen, thus turning the solid material from below to liquid material at the top. Traditionally, we thought that there should be large liquid chambers underneath the volcanoes; however, we discovered otherwise. We simply could not find these large liquid chambers in many of the active volcanoes in the world. Thus, if there is no large liquid chambers, where is the liquid lava from volcanoes coming from?
-        
-        <br><br>
-        
-        Thus, my supervisor for the UROP project, Prof. M.D. Jackson from Imperial, along with Prof. J. Blundy and R.S.J Sparks from the University of Bristol published an article in Nature about how they think that there can be liquid lavas when there is no liquid magma chambers.
-        
-        <br><br>
-        
-        <a href = "https://www.nature.com/articles/s41586-018-0746-2">Chemical differentiation, cold storage and remobilization of magma in the Earth&rsquo;s crust https://doi.org/10.1038/s41586-0 Nature volume 564, pages 405&ndash;409 (2018)  </a>
-        
-        <br><br>
-        
-        I worked, with Miss Catherine Booth at Imperial (well, now I should probably call her Dr. Catherine Booth?) on the follow up from the model proposed in this paper in Nature by our supervisor.
-        
-        <br><br>
-        
-        The code that I originally used comes from Prof. Matthew Jackson, so if there is interest in the code, then please email Prof. Matthew Jackson at m.d.jackson@imperial.ac.uk
-        
-        <br><br>
-        
-        Part 1: Assumptions of the Model
-        
-        <br><br>
-        
-        Ok, so the article looked really complicated the first time I had a look at it and seemed quite daunting. It also uses lots of math equations that are ok once you understand them, but can seem difficult at first. Mainly, it will use Darcy&apos;s Law to model the remobilization of magma through the crystalline mush.
-        
-        <br><br>
-        
-        Before I start going through the model, I think it is important to clarify some assumptions about the system we are talking about.
-        
-        <br><br>
-        
-        First, we have a volcanic system, and volcanoes are generally hot. Volcanoes are not only hot when the volcanoes are actively erupting, but also hot when the volcanoes are not actively erupting, since we often see hot springs around volcanoes and geothermal power station. (I think the Geophhysics society at Imperial organized an &quot;educational&quot; trip to Iceland to &quot;study&quot; the hot springs there some years before).Thus, we can say that volcanoes must have some sort of heat accumulation, and the heat accumulation is more than the heat dissipation. During the last years of activity of a volcano, the heat dissipation becomes more than heat accumulation, so the volcano dies. &nbsp;
-        
-        <br><br>
-        
-        Second, since we have a volcano, it should also be reasonable that there needs to be some sort of conduit to bring hot mantle material to the surface, and the conduit needs to bring a lot of the hot mantle material to the surface for a volcano to form before the volcano starts dying, otherwise it would be a simple magma intrusion into the crust, and form dykes or sills. The conduit might not always be continuously bring materials, but just bring the material often enough to allow the formation of a volcano. We model this using a regular intrusion of hot material at the deepest depth in the system throughout the active lifespan of the volcano.
-        
-        <br><br>
-        
-        Part 2: Beginning of a volcano
-        
-        <br><br>
-        
-        In the beginning, we have a piece of crust, who has a normal temperature and pressure profile. Then, we have intrusion of hot material into the system in the form of active spikes. The hot material that intrudes into the system are very hot and very buoyant, and they will rise from the depths, exploting the microfractures within the rocks of the crust, and in the case where there are no microfractures, create such microfractures by forcefully breaking apart the rocks. As these hot and buoyant materials rise, they come into contact with the cold crust, which forces the hot and buoyant material to cool, thus solidyfying them into solid dykes and sills. To eventually result in a volcano, we need lots of hot material be injected into the system, and the system must be able to allow the heat in the system to accumulate faster than dissipate. Thus, we will continuously inject hot mantle material into the system, often enough that the system becomes hotter and hotter. While each intrusion of mantle material will eventually cool and solidy, the heat they brought is spread throughout the system, and the heat will accumulate in the system, making the system hotter and hotter. Thus we have &quot;cold storage&quot; of magma where the magma is stored as solid instead of a liquid. Thus explaining why we do not see liquid magma chambers.
-        
-        <br><br>
-        
-        Part 3: Active volcano
-        
-        <br><br>
-        
-        As the system becomes hotter and hotter due to the continuous intrusion of hot magmatic material, the temperature in the system will eventually allow for the mantle material that is being &nbsp;injected to exist in the liquidus form. Here we are not saying that there is a big liquid magma chamber, but actually that the whole system gets so hot that we are transitioning from a state that is completely liquid to a state where we have lots of solid crystals, but in between these solid crystals, we can finally have liquid flowing through them.
-        
-        <br><br>
-        
-        This might be a bit untuitive since high school textbooks usually simplify the situation and work with only single materials. Thus, for pure water for example, transitions between the solid, liquid, gas state. (Yes, you can cause water to plasma itself). However, for solid mixture of different materials, then increasing the temperature past the temperature where the entire mixture is solid can result in the mixture being partially solid and partially liquid. As you increase the temperature even more, the solid fraction decreases, while the liquid fraction increases, and eventually a sufficiently high temperature will result in an entirely liquid mixture. Rocks in the crust are mixtures of different materials, and the mantle material that is injected into the crust is also a mixture of materials.
-        
-        <br><br>
-        
-        Thus, since our system is really hot, we move from a completely solid state to a state where the system is mostly solid, and with a very small liquid fraction. However, this liquid fraction, being a liquid, is more buoyant than the solid around it, so it will keep on rising through the microfractures in the system. Since the system is very hot, the liquid fraction cannot be cooled quickly enough into solid anymore during its climbling process, and small amounts of liquid will start accumulating at the very top. At the very top of the system, although the temperature might be a bit cooler than before, the depressurization due to the lack of stuff above it (you&apos;re at the very top, so there is less stuff on top of you) will allow the liquid that reaches the top to remain liquid and accumulate. &nbsp;<br><br>However, by the time the liquid has reached the top, the whole system will have to very very hot and very close to eruption. Volcanic eruption willquickly eliminate the liquid accumulated at the top, and thus will prevent the formation of a large liquid magma chamber. During this period of active eruption, the whole volcanic system remains very hot due to continuous magma injection from the mantle, and the very hotness of the system and the continuous eruptions prevent the formation of a large magma chamber, since whatever liquid fraction is accumulated at the top is quickly erupted and eliminated away from the system.
-        
-        <br><br>
-        
-        An evidence to support this claim is the fact for actively erupting volcanoes, we have detected a slowdown in the P and S wave seismic velocity through them. This means that while there is no large liquid magma chamber underneath such volcanoes, we do see an increased liquid fraction in the volcano. Thus, instead of a large magma chamber, what we have a crystalline mush with a small liquid fraction that is present in the microfractures and pore spaces within the mush.
-        
-        <br><br>
-        
-        The hot liquid, during its rise to the top, will melt and chip away at the solid crystals around it, so here we see the process of &quot;remobilization&quot; of old magma material that were previously cooled and frozen.
-        
-        <br><br>
-        
-        Part 4: Chemical Differentiation
-        
-        <br><br>
-        
-        As stated before, you can regard the crust and mantle as a solid mixture of various different kinds of rocks. One of the distinguishing features between the crust and the mantle is the weight total of the silicates or wt% SiO2. For the continental crust, the crust has a low wt% SiO2, at about 40% while for the mantle intrusions from below, it will have a high wt% SiO2, at about 60%. These numbers aren&apos;t exactly exact in literature, and you might see them referred to as felsic or mafic.
-        
-        <br><br>
-        
-        For our system, we originally started with a piece of crust that by default comes with a high wt% of SiO2. The material from the mantle that we intrude from the mantle though has a low weight total of the SiO2. Thus, the wt% of SiO2 is going to change as we intrude more and more hot mantle material into the system. At depth, we will have a generally lower amount of SiO2 due to the continous mantle intrusions, which gradually increases towards the top, which eventually becomes no different from felsic due to the earlier explained remobilization process. Thus, if we excavate and investigate a volcano whose insides have been exposed due to tectonic movements, we should see a change from felsic to mafic as we progress move deeper into the volcano.
-        
-        <br><br>
-        
-        We should also see another trend for the trace elements. Ok, so in simple terms, there are certain chemical elements that have a preference for the solid phase or the liquid phase, and we call these compatible and incompatible trace element. If we have movement of the liquid fraction through the crystalline mush that will eventually accumulate at the top, then these elements will encounter a chance to choose to stay in the solid crystal or in the buoyant liquid. Incompatible trace element prefer to stay in the liquid, while the compatible trace elments perfer to stay in the solid. Thus, the incompatible trace element which prefer to stay in the liquid will be concentrated in the liquid and will move upwards with the liquid, while the compatible trace elements which prefer to stay in the solid will be concentrated in the solid and will remain in the solid crystal. Thus, we should see a concentration of the incompatible trace elements at the top of the system because the buoyant liquid that carries these incompatible trace elements get carried upwards.
-        
-        <br><br>
-        
-        Thus, we have &quot;reactive flow&quot; where the flow of the buoyant liquid fraction actually modified the &quot;bulk composition&quot; of the system, i.e. the wt% of silicates and the amount of trace element. We have &quot;chemical differentiation&quot; because different chemical element are moving to different places in the system. The models believes &quot;reactive flow&quot; is very important in determining the bulk chemical composition of the system through chemical differentation.
-        
-        <br><br>
-        
-        Part 5: Evidence for Chemical differentiation
-        
-        <br><br>
-        
-        Ok, so the model is all good and stuff, then what will be the evidence to say that this model is correct? Or what would be the evidence to prove that this model is wrong? Well, we have already stated that we are expecting to see a chemical differentiation. At depth, since we are closer to the mantle, we are expecting to see a low %wt silicate, while at the top, we are expecting to see a high %wt silicate. Also, at depth, we are expecting to see low trace element concentration, while at the top, we are expecting to see a high trace element concentration. Thus, if the model is correct, then we should see a positive correlation between the %wt silicate and the trace element concentration.
-        
-        <br><br>
-        
-        Part 6: Famatina, Ivrea and Kohistan
-        
-        <br><br>
-        
-        A difficulty in testing out the model is that we cannot exactly try to drill into an active volcano. We can only drill into dead volcanoes. Drilling into dead volcanoes is also rather difficult. Thus, we need to find locations where the interior of a former dead volcano is pushed onto the surface by tectonic processes. Thus, there are 3 such locations which have been extensively studied so there&apos;s lots of data (not neccesarily good data) on what type of rocks are in those locations. These are the Famatina arc, Argentina, Ivrea, Northern Italy and Kohistan, Pakistan.
-        
-        <br><br>
-        
-        We note that since these former dead volcanoes are probably going to be quite deformed when it is pushed to the surface, there is going to be significant metamorphism (transformation to rock due to heat and pressure), so we cannot use the transformed rocks that were transformed after the volcano has died, since they have lost the information about when the volcano is alive. Thus, we need to filter the data out. We also note that due to the extensive tectonic processes, and all kinds of possible weird flips, shears etc. the rocks are probably not going to be nicely ordered in a straight line based on the age.
-        
-        <br><br>
-        
-        Nonetheless, we should see that there should be a positive correlation between the %wt silicate and the incompatible trace element concentration in the system.
-        
-        <br><br>
-        
-        #insert picture of plots about the positive correlation between the silicate and incompatible trace elements
-        
-        <br><br>
-        
-        Part 7: Conclusions
-        
-        <br><br>
-        
-        To conclude, is the model correct? Well, my supervisor, the authors of the paper, me and Miss (maybe Dr. now?) Catherine Booth think it is correct, but my supervisor still every once in a while gets calls or emails telling him that he might not be exactly right about the model. Also, this is not the only model that works to explain the physical phenomena related to the volcanoes. Nonetheless, it would be great if such discussions could gather more attention and attract more research interest into such topics.
-        
-        <br><br>
-    
+            <br><br>
+        
+            So if there is one thing I learnt during my 3 years of Geophysics at Imperial, it is that the Earth&apos;s mantle is SOLID. I know how you might think that since the lava coming out from a volcano is liquid, then the source of this lava must be solid. I have had my fair share of strange children&apos;s books that propagated this idea. However, it has been known for at least a century that the Earth&apos;s mantle is SOLID. Let me explain beforehand a bit about the structure of the Earth.
+            
+            <br><br>
+            
+            A basic understanding of Earth will tell you that Earth consists of several layers. We have the very thin crust, the very thick mantle, the outer core of the Earth and the inner core of the Earth. Books will try to tell you about the exact measurements of these parts of the Earth, but you should not think of these as actual exact measurements, but only as reference measurements. This is because the Earth&apos;s layer&apos;s thicknesses are non-homogenous. For example, in locations like the Himalayas, the Alps, or the Andes, the crust is much thicker compared to the crust in the middle of the Atlantic Ocean, the Pacific Ocean or the Indian Ocean. The mantle is likewise non-homogenous, and we know that the core-mantle boundary, that is the boundary between the core and the mantle, a.k.a. the CMB is not just a nice smooth curve, but it has its highs and lows.
+            
+            <br><br>
+            
+            Investigating the internal structure of Earth has always been a great topic for research. We definitely cannot dig into the Earth to study its interior. The deepest hole we have dug is about 12 to 13 km deep. We have never been able to pierce even the Earth&apos;s crust. Thus, how do we know what is the structure of Earth? Well, we use seismic waves, specifically the body waves P and S waves.
+            
+            <br><br>
+            
+            The full details are complicated and involve a lot of tensor mathematics that would require a whole book for the job, but in simpler words, we know that P and S waves behave differently when there are solids or liquids. P waves become very slow, and S waves disappear completely when passing through liquids. Thus, by studying the P and S waves from large earthquakes which will send these waves deep into the Earth&apos;s interior, we found that the crust is solid, the mantle is solid, the outer core is LIQUID and the inner core is SOLID. &nbsp;
+            
+            <br><br>
+            
+            On a side note, one of the first instruments used in space probes are also seismometers, which are instruments recording the vibrations in the ground, so the body waves and the surface waves. Exactly how to read a seismogram in an extraterrestrial setting is a topic too long to discuss, but we know that similar to how studying the P and S waves on Earth using seismometers can reveal information about the Earth&apos;s interior, so can studying the P and S waves on Mars or the Moon also reveal information about the interior of these bodies. These studies show that Earth is indeed a very special planet in its internal structure, and the unique characteristics of Earth might have helped it foster such a diverse biosphere.
+            
+            <br><br>
+            
+            However, since the Earth&apos;s mantle and crust are solid, how come the lava coming out of the volcanoes are liquid? Well, it comes down to pressure. When the material comes up to the surface, the pressure decreases a lot and allows melting to happen, thus turning the solid material from below to liquid material at the top. Traditionally, we thought that there should be large liquid chambers underneath the volcanoes; however, we discovered otherwise. We simply could not find these large liquid chambers in many of the active volcanoes in the world. Thus, if there are no large liquid chambers, where is the liquid lava from volcanoes coming from?
+            
+            <br><br>
+            
+            Thus, my supervisor for the UROP project, Prof. M.D. Jackson from Imperial, along with Prof. J. Blundy and R.S.J Sparks from the University of Bristol published an article in Nature about how they think that there can be liquid lavas when there are no liquid magma chambers.
+            
+            <br><br>
+            
+            <a href = "https://www.nature.com/articles/s41586-018-0746-2">Chemical differentiation, cold storage and remobilization of magma in the Earth&rsquo;s crust https://doi.org/10.1038/s41586-0 Nature volume 564, pages 405&ndash;409 (2018)  </a>
+            
+            <br><br>
+            
+            I worked, with Miss Catherine Booth at Imperial (well, now I should probably call her Dr Catherine Booth?) on the follow up from the model proposed in this paper in Nature by our supervisor.
+            
+            <br><br>
+            
+            The code that I originally used comes from Prof. Matthew Jackson, so if there is interest in the code, then please email Prof. Matthew Jackson at m.d.jackson@imperial.ac.uk
+            
+            <br><br>
+            
+            Part 1: Assumptions of the Model
+            
+            <br><br>
+            
+            Ok, so the article looked complicated the first time I had a look at it and seemed quite daunting. It also uses lots of math equations that are ok once you understand them but can seem difficult at first. Mainly, it will use Darcy&apos;s Law to model the remobilization of magma through the crystalline mush.
+            
+            <br><br>
+            
+            Before I start going through the model, I think it is important to clarify some assumptions about the system we are talking about.
+            
+            <br><br>
+            
+            First, we have a volcanic system, and volcanoes are generally hot. Volcanoes are not only hot when the volcanoes are actively erupting, but also hot when the volcanoes are not actively erupting, since we often see hot springs around volcanoes and geothermal power station. (I think the Geophysics society at Imperial organized an &quot;educational&quot; a trip to Iceland to &quot;study&quot; the hot springs there some years before). Thus, we can say that volcanoes must have some sort of heat accumulation, and the heat accumulation is more than the heat dissipation. During the last years of activity of a volcano, the heat dissipation becomes more than heat accumulation, so the volcano dies. &nbsp;
+            
+            <br><br>
+            
+            Second, since we have a volcano, it should also be reasonable that there needs to be some sort of conduit to bring hot mantle material to the surface, and the conduit needs to bring a lot of the hot mantle material to the surface for a volcano to form before the volcano starts dying, otherwise, it would be a simple magma intrusion into the crust, and form dykes or sills. The conduit might not always continuously bring materials, but just bring the material often enough to allow the formation of a volcano. We model this using a regular intrusion of hot material at the deepest depth in the system throughout the active lifespan of the volcano.
+            
+            <br><br>
+            
+            Part 2: Beginning of a volcano
+            
+            <br><br>
+            
+            In the beginning, we have a piece of crust, who has a normal temperature and pressure profile. Then, we have the intrusion of hot material into the system in the form of active spikes. The hot material that intrudes into the system is very hot and very buoyant, and they will rise from the depths, exploiting the microfractures within the rocks of the crust, and in the case where there are no microfractures, create such microfractures by forcefully breaking apart the rocks. As these hot and buoyant materials rise, they come into contact with the cold crust, which forces the hot and buoyant material to cool, thus solidifying them into solid dykes and sills. To eventually result in a volcano, we need lots of hot material to be injected into the system, and the system must be able to allow the heat in the system to accumulate faster than dissipate. Thus, we will continuously inject hot mantle material into the system, often enough that the system becomes hotter and hotter. While each intrusion of mantle material will eventually cool and solidify, the heat they brought is spread throughout the system, and the heat will accumulate in the system, making the system hotter and hotter. Thus we have &quot;cold storage&quot; of magma where the magma is stored as solid instead of a liquid. Thus explaining why we do not see liquid magma chambers.
+            
+            <br><br>
+            
+            Part 3: Active volcano
+            
+            <br><br>
+            
+            As the system becomes hotter and hotter due to the continuous intrusion of hot magmatic material, the temperature in the system will eventually allow for the mantle material that is being &nbsp; injected to exist in the liquidus form. Here we are not saying that there is a big liquid magma chamber, but actually that the whole system gets so hot that we are transitioning from a state that is completely liquid to a state where we have lots of solid crystals, but in between these solid crystals, we can finally have liquid flowing through them.
+            
+            <br><br>
+            
+            This might be a bit unintuitive since high school textbooks usually simplify the situation and work with only single materials. Thus, for pure water, for example, transitions between the solid, liquid, gas state. (Yes, you can cause water to plasma itself). However, for a solid mixture of different materials, then increasing the temperature past the temperature where the entire mixture is solid can result in the mixture being partially solid and partially liquid. As you increase the temperature, even more, the solid fraction decreases, while the liquid fraction increases, and eventually, a sufficiently high temperature will result in an entirely liquid mixture. Rocks in the crust are mixtures of different materials, and the mantle material that is injected into the crust is also a mixture of materials.
+            
+            <br><br>
+            
+            Thus, since our system is really hot, we move from a completely solid-state to a state where the system is mostly solid, and with a very small liquid fraction. However, this liquid fraction, being a liquid, is more buoyant than the solid around it, so it will keep on rising through the microfractures in the system. Since the system is very hot, the liquid fraction cannot be cooled quickly enough into solid anymore during its climbing process, and small amounts of liquid will start accumulating at the very top. At the very top of the system, although the temperature might be a bit cooler than before, the depressurization due to the lack of stuff above it (you&apos;re at the very top, so there is less stuff on top of you) will allow the liquid that reaches the top to remain liquid and accumulate. &nbsp;<br><br>However, by the time the liquid has reached the top, the whole system will have to very very hot and very close to eruption. Volcanic eruption will quickly eliminate the liquid accumulated at the top, and thus will prevent the formation of a large liquid magma chamber. During this period of active eruption, the whole volcanic system remains very hot due to continuous magma injection from the mantle, and the very hotness of the system and the continuous eruptions prevent the formation of a large magma chamber since whatever liquid fraction is accumulated at the top is quickly erupted and eliminated away from the system.
+            
+            <br><br>
+            
+            Evidence to support this claim is the fact for actively erupting volcanoes, we have detected a slowdown in the P and S wave seismic velocity through them. This means that while there is no large liquid magma chamber underneath such volcanoes, we do see an increased liquid fraction in the volcano. Thus, instead of a large magma chamber, what we have a crystalline mush with a small liquid fraction that is present in the microfractures and pore spaces within the mush.
+            
+            <br><br>
+            
+            The hot liquid, during its rise to the top, will melt and chip away at the solid crystals around it, so here we see the process of &quot;remobilization&quot; of old magma material that was previously cooled and frozen.
+            
+            <br><br>
+            
+            Part 4: Chemical Differentiation
+            
+            <br><br>
+            
+            As stated before, you can regard the crust and mantle as a solid mixture of different kinds of rocks. One of the distinguishing features between the crust and the mantle is the weighted total of the silicates or wt% SiO2. For the continental crust, the crust has a low wt% SiO2, at about 40% while for the mantle intrusions from below, it will have a high wt% SiO2, at about 60%. These numbers aren&apos;t exactly exact in literature, and you might see them referred to as felsic or mafic.
+            
+            <br><br>
+            
+            For our system, we originally started with a piece of crust that by default comes with a high wt% of SiO2. The material from the mantle that we intrude from the mantle though has a low weight total of the SiO2. Thus, the wt% of SiO2 is going to change as we intrude more and more hot mantle material into the system. At depth, we will have a generally lower amount of SiO2 due to the continuous mantle intrusions, which gradually increases towards the top, which eventually becomes no different from felsic due to the earlier explained remobilization process. Thus, if we excavate and investigate a volcano whose insides have been exposed due to tectonic movements, we should see a change from felsic to mafic as we progressively move deeper into the volcano.
+            
+            <br><br>
+            
+            We should also see another trend for trace elements. Ok, so in simple terms, certain chemical elements have a preference for the solid phase or the liquid phase, and we call these compatible and incompatible trace element. If we have movement of the liquid fraction through the crystalline mush that will eventually accumulate at the top, then these elements will encounter a chance to choose to stay in the solid crystal or the buoyant liquid. Incompatible trace element prefers to stay in the liquid, while the compatible trace elements prefer to stay in the solid. Thus, the incompatible trace element which prefers to stay in the liquid will be concentrated in the liquid and will move upwards with the liquid, while the compatible trace elements which prefer to stay in the solid will be concentrated in the solid and will remain in the solid crystal. Thus, we should see a concentration of the incompatible trace elements at the top of the system because the buoyant liquid that carries these incompatible trace elements get carried upwards.
+            
+            <br><br>
+            
+            Thus, we have &quot; reactive flow&quot; where the flow of the buoyant liquid fraction modified the &quot; bulk composition&quot; of the system, i.e. the wt% of silicates and the amount of trace element. We have &quot;chemical differentiation&quot; because the different chemical elements are moving to different places in the system. The models believe &quot;reactive flow&quot; is very important in determining the bulk chemical composition of the system through chemical differentiation.
+            
+            <br><br>
+            
+            Part 5: Evidence for Chemical differentiation
+            
+            <br><br>
+            
+            Ok, so the model is all good and stuff, then what will be the evidence to say that this model is correct? Or what would be the evidence to prove that this model is wrong? Well, we have already stated that we are expecting to see a chemical differentiation. At depth, since we are closer to the mantle, we are expecting to see a low %wt silicate, while at the top, we are expecting to see a high %wt silicate. Also, at depth, we are expecting to see low trace element concentration, while at the top, we are expecting to see a high trace element concentration. Thus, if the model is correct, then we should see a positive correlation between the %wt silicate and the trace element concentration.
+            
+            <br><br>
+            
+            Part 6: Famatina, Ivrea and Kohistan
+            
+            <br><br>
+            
+            A difficulty in testing out the model is that we cannot exactly try to drill into an active volcano. We can only drill into dead volcanoes. Drilling into dead volcanoes is also rather difficult. Thus, we need to find locations where the interior of a former dead volcano is pushed onto the surface by tectonic processes. Thus, 3 such locations have been extensively studied so there&apos;s lots of data (not necessarily good data) on what type of rocks are in those locations. These are the Famatina arc, Argentina, Ivrea, Northern Italy and Kohistan, Pakistan.
+            
+            <br><br>
+            
+            We note that since these former dead volcanoes are probably going to be quite deformed when it is pushed to the surface, there is going to be significant metamorphism (transformation to rock due to heat and pressure), so we cannot use the transformed rocks that were transformed after the volcano has died, since they have lost the information about when the volcano is alive. Thus, we need to filter the data out. We also note that due to the extensive tectonic processes, and all kinds of possible weird flips, shears etc. the rocks are probably not going to be nicely ordered in a straight line based on the age.
+            
+            <br><br>
+            
+            Nonetheless, we should see that there should be a positive correlation between the %wt silicate and the incompatible trace element concentration in the system.
+            
+            <br><br>
+            
+            #insert picture of plots about the positive correlation between the silicate and incompatible trace elements
+            
+            <br><br>
+            
+            Part 7: Conclusions
+            
+            <br><br>
+            
+            To conclude, is the model correct? Well, my supervisor, the authors of the paper, me and Miss (maybe Dr. now?) Catherine Booth thinks it is correct, but my supervisor still every once in a while gets calls or emails telling him that he might not be exactly right about the model. Also, this is not the only model that works to explain the physical phenomena related to volcanoes. Nonetheless, it would be great if such discussions could gather more attention and attract more research interest into such topics.
+            
+            <br><br>
         </p>
 
 
