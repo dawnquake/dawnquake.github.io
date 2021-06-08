@@ -1,8 +1,6 @@
-from itertools import repeat
 import quantumrandom
 import glob
 import os
-from moviepy.editor import VideoFileClip
 import natsort
 import uuid
 import math
@@ -82,6 +80,8 @@ file_list = natsort.natsorted(glob.glob(glob_key))
 track_total = (len(file_list))
 repeat_last = False
 minimize = True
+vlc_path = "/usr/bin/vlc"
+cvlc_path = "/usr/bin/cvlc"
 
 last_seed = 0
 seed = 0
@@ -89,6 +89,10 @@ seed = 0
 while True:
 
     seed = generate_seed(track_total)
+
+    # Failsafe
+    if seed >= track_total or seed < 0:
+        seed = generate_seed(track_total)
 
     if repeat_last == False:
         while seed == last_seed:
@@ -100,11 +104,11 @@ while True:
     FNULL = open(os.devnull, 'w')
     # if you want to have it minimized
     if minimize == False:
-        p = subprocess.Popen(["/usr/bin/vlc",filename],
+        p = subprocess.Popen([vlc_path,filename],
                               stdout=FNULL,
                               stderr=subprocess.STDOUT)
     else:
-        p = subprocess.Popen(["/usr/bin/cvlc",filename],
+        p = subprocess.Popen([cvlc_path, filename],
                               stdout=FNULL,
                               stderr=subprocess.STDOUT)
 
