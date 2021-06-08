@@ -26,13 +26,15 @@
         <br>
         <br> 
         <code>
+        python3 -m pip install jupyter
+        <br>
         python3 -m pip install notebook
         <br>
-        python3 -m pip install PIL
-        <br>
-        python3 -m pip install glob
+        python3 -m pip install fpdf
         <br>
         python3 -m pip install natsort
+        <br>
+        python3 -m pip install Pillow
         </code>
 
         <br>
@@ -52,16 +54,23 @@
 
         If you do not trust me with the Python notebook, here is the code snippet in text
 
-    <br>   
+    <br>  
+
+    If you are not using the jupyter notebook, you will have to run Part0 of the notebook instead in the command prompt/terminal.
+
     <pre>
     
     import sys
-    !{sys.executable} -m pip install --upgrade pip
-    !{sys.executable} -m pip install jupyter
-    !{sys.executable} -m pip install notebook
-    !{sys.executable} -m pip install fpdf
-    !{sys.executable} -m pip install natsort
-    !{sys.executable} -m pip install Pillow
+    python3 -m pip install --upgrade pip
+    python3 -m pip install jupyter
+    python3 -m pip install notebook
+    python3 -m pip install fpdf
+    python3 -m pip install natsort
+    python3 -m pip install Pillow
+
+    </pre>
+
+    <pre>
 
     from fpdf import FPDF
     from PIL import Image, ImageEnhance ## Not used, but can be used
