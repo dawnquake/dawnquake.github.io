@@ -43,7 +43,7 @@
         <br>
         <br>
 
-        <a href="./img2pdf_mass_convert.ipynb" download>
+        <a href="./img2pdf_20210608.ipynb" download>
             Click this link to download the Python notebook
         </a>
 
@@ -55,56 +55,146 @@
     <br>   
     <pre>
     
-from PIL import Image, ImageEnhance
-import glob
-import os
-from natsort import natsorted, ns
+    import sys
+    !{sys.executable} -m pip install --upgrade pip
+    !{sys.executable} -m pip install jupyter
+    !{sys.executable} -m pip install notebook
+    !{sys.executable} -m pip install fpdf
+    !{sys.executable} -m pip install natsort
+    !{sys.executable} -m pip install Pillow
 
-file_list = natsorted(glob.glob("*.jpeg"))
-print(file_list) ## Checking that the file list is correct
-output_filename = "output.pdf" ## Filename for output
-image0 = Image.open(file_list[0])
+    from fpdf import FPDF
+    from PIL import Image, ImageEnhance ## Not used, but can be used
+    import glob
+    import os
+    from natsort import natsorted
 
-rest_image_list = []
+    def get_images(glob_key):
+        
+        """
+        Function to get images based on glob key
+        Parameters
+        ----------
+        glob_key : str
+            The glob key used to get images
 
-for index in range(1, len(file_list)):
-    image = Image.open(file_list[index])
+        Returns
+        -------
+        file_list : list
+            Natsorted list of the filenames
+            
+        Notes
+        ------
+        Since this uses the glob and natsort libraries
+        Feel free to add additional glob or natsort options
+        The documentation for glob and natsort are on PyPI
+        
+        Examples
+        ------
+        To get all png files, the glob key is "*.png"
+        To get all jpg files, the glob key is "*.jpg"
+        Since it returns a list, if you want both png and jpg
+        Or do some manual changes to the order of the images
+        Then you can easily use Python list operations 
+        To get your desired list
+        
+        """
+        
+        file_list = natsorted(glob.glob(glob_key))
+        return file_list
 
-    ## Here are some typical applicable
-    # image = image.resize((600, 849))
-    
-    # left = 40
-    # top = 40
-    # right = 560
-    # bottom = 809
-    # image = image.resize((600, 849))
-    
-    # factor = 1
-    # enhancer = ImageEnhance.Contrast(image)
-    # image_mod = enhancer.enhance(factor)
-    # print(image_mod.size)
-    # Here, image_mod is the output
-    # so you should append the image_mod
+    def generate_pdf(pdf_filename, file_list, size):
 
-    rest_image_list.append(image)
+        """
+        Function to generate pdf based on the files given
+        Parameters
+        ----------
+        file_list : list
+            The list of image files
+            The pdf will be generated in the same order
+            as the image files in file_list
+            Putting stuff other than image files
+            can cause problems, add try/except block then
+            
+        size : list
+            List of 4 integers
+            Defining the size of the pdf page
 
-
-
-image0.save(output_filename,
-            "PDF" ,
-            resolution=100.0,
-            save_all=True,
-            append_images=rest_image_list)
+        Returns
+        -------
+        return_msg : str
+            Return message, 
+            positive message if pdf generation success
+            negative message if pdf generation failure
+            
+        Notes
+        ------
+        You can manually modify this function to have
+        different sizes for different pages
+        by replacing the for block with 
+        
+        for index in range(0, index_start_different_size):
+            pdf.add_page()
+            pdf.image(file_list[index],
+                    size[0],
+                    size[1],
+                    size[2],
+                    size[3])
+                    
+        for index in range(index_start_different_size,
+                        index_end_different_size):
+            pdf.add_page()
+            pdf.image(file_list[index],
+                    size[0],
+                    size[1],
+                    size[2],
+                    size[3])
+        
+        for index in range(index_end_different_size,
+                        len(file_list)):
+            pdf.add_page()
+            pdf.image(file_list[index],
+                    size[0],
+                    size[1],
+                    size[2],
+                    size[3])
+        
+        
+        Examples
+        ------
+        file_list = get_images("*.jpg")
+        pdf_filename = "filename.pdf"
+        size = [0, 0, 210, 297]
+        generate_pdf(file_list, size)
+        
+        This will generate an A4 pdf using all jpg files
+        with the name filename.pdf
+        
+        """
+        
+        pdf = FPDF()
+        for index in range(len(file_list)):
+            pdf.add_page()
+            pdf.image(file_list[index],
+                    size[0],
+                    size[1],
+                    size[2],
+                    size[3])
+        try:
+            pdf.output(pdf_filename, "F")
+            return_msg = "PDF generate success"
+            return return_msg
+        except:
+            return_msg = "PDF generate fail"
+            return return_msg
+        
+    file_list = get_images("*.png")
+    pdf_filename = "filename.pdf"
+    size = [0, 0, 210, 297]
+    generate_pdf(pdf_filename, file_list, size)
 
     </pre>
 
-    And here is a link to download the script as a .py file
-
-    <br><br>
-
-    <a href="./img2pdf_mass_convert.py" download>
-            Click this link to download the Python notebook
-    </a>
     </div>
     
 
